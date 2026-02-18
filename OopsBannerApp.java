@@ -9,7 +9,7 @@
 * @author Developer
 * @version 5.0
 **/
-class OopsBannerLoop{
+class OopsBannerApp{
 	public static void main(String[] args){
 		// Creating an array and using String.join() method to form the pattern
 		String oops[] = {
