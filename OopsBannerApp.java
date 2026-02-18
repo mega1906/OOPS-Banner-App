@@ -1,24 +1,30 @@
 /** 
-* OOPSBANNERAPP UC4 - OOPS BANNER Display Application
+* OOPSBANNERAPP UC5 - OOPS BANNER Display Application
+* 
+* This uses array and String.join() method to store the pattern and print the pattern using for loop
 * 
 * This class demonstrates a simple Java application that displays the Object
-*Oriented Programming System OOPS acronym to the console.
+* Oriented Programming System OOPS acronym to the console.
+
 * @author Developer
-* @version 4.0
+* @version 5.0
 **/
-class OopsBannerApp{
+class OopsBannerLoop{
 	public static void main(String[] args){
-		String oops[] = new String[9];
-		oops[0] = String.join(" ", "   ***   " , "   ***   " , " ******   " , "  ***** ");
-		oops[1] = String.join(" "," **   **" , "  **   **" , "  **   **" ,  " **");
-		oops[2] = String.join(" ","**     **" , "**     **" , " **    **" , "**");
-		oops[3] = String.join(" ","**     **" , "**     **" , "  **   **" , " **");
-		oops[4] = String.join(" ","**     **" , "**     **" , " ****** " , "   ****");
-		oops[5] = String.join(" ","**     **" , "**     **" , " **     " , "      **");
-		oops[6] = String.join(" ","**     **" , "**     **" , " **     " , "       **");
-		oops[7] = String.join(" "," **   **" , "  **   **" , "  **     " , "      **");
-		oops[8] = String.join(" ","   ***   " , "   ***   " , " **     " , "  ***** ");
+		// Creating an array and using String.join() method to form the pattern
+		String oops[] = {
+			String.join(" ", "   ***   " , "   ***   " , " ******   " , "  ***** "), 
+			String.join(" "," **   **" , "  **   **" , "  **   **" ,  " **"), 
+			String.join(" ","**     **" , "**     **" , " **    **" , "**"),
+			String.join(" ","**     **" , "**     **" , "  **   **" , " **"),
+			String.join(" ","**     **" , "**     **" , " ****** " , "   ****"),
+			String.join(" ","**     **" , "**     **" , " **     " , "      **"),
+			String.join(" ","**     **" , "**     **" , " **     " , "       **"),
+			String.join(" "," **   **" , "  **   **" , "  **     " , "      **"),
+			String.join(" ","   ***   " , "   ***   " , " **     " , "  ***** ")
+		};
 		
+		// Printing the pattern using for loop
 		for (String i : oops){
 			System.out.println(i);
 		}	
