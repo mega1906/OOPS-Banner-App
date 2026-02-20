@@ -1,23 +1,24 @@
 /** 
-* OOPSBANNERAPP UC7 - OOPS BANNER Display Application
+* OOPSBANNERAPP UC8 - OOPS BANNER Display Application
 * 
 * This class demonstrates a simple Java application that displays the Object
 * Oriented Programming System OOPS acronym to the console.
 *
 * @author Developer
-* @version 7.0
+* @version 8.0
 **/
+
+import java.util.*;
+
 class OopsBannerApp{
 	/**
-	CharacterPatternMap - Inner class
-	It has methods to create print the patterns
+	Create a hashmap containing ASCII patterns for the characters
 	**/
-	static class CharacterPatternMap{
-		/* 
-		Define methods getOPattern, getPPattern and getSPattern that returns string arrays representing the ASCII art for each letter
-		*/
-		public static String[] getOPattern(){
-			return new String[] 
+	public static HashMap<Character, String[]> createCharacterMap() {
+		// Create a new HashMap to store the Pattern for each character
+		HashMap<Character, String[]> charMap = new HashMap<>();
+		// Add the character and pattern to charMap
+		charMap.put('O', new String[] 
 			{
 				"     ***   ",
 				"   **   ** ",
@@ -28,11 +29,8 @@ class OopsBannerApp{
 				"  **     **",
 				"   **   ** ",
 				"     ***   "
-			};
-			
-		}
-		public static String[] getPPattern(){
-			return new String[] 
+			});
+		charMap.put('P', new String[] 
 			{
 				"*******",
 				"**    *",
@@ -43,10 +41,10 @@ class OopsBannerApp{
 				"**     ",
 				"**     ",
 				"**     "
-			};
-		}
-		public static String[] getSPattern(){
-			return new String[] {
+			});
+			
+		charMap.put('S', new String[] 
+			{
 				" ***** ",
 				" **",
 				"**",
@@ -56,23 +54,24 @@ class OopsBannerApp{
 				"       **",
 				"      **",
 				"   ***** "
-			};
-		}
-		public static void printPattern(String[] oPattern, String[] pPattern, String[] sPattern){
-			// Printing the pattern using for loop
-			for (int i = 0; i < oPattern.length; i++){
-				System.out.println(oPattern[i] + oPattern[i] + " " + pPattern[i] + " " + sPattern[i]);
-			}	
+			});
+		return charMap;
+	}
+	/**
+	Method to print banner message using the charMap 
+	**/
+	public static void displayBanner(String message, HashMap<Character, String[]> charMap){
+		int patternLength = charMap.get('O').length;
+		for (int i = 0; i < patternLength; i++){
+			System.out.println(charMap.get('O')[i] + charMap.get('O')[i] + charMap.get('P')[i] + charMap.get('S')[i]);
 		}
 	}
-	
-	/*
-	In the Main method, create an object and call the print pattern method. 
-	The printPattern method has three parameters for which the pattern method is called using the object.
-	*/
-	public static void main(String[] args){
-		CharacterPatternMap charMaps = new CharacterPatternMap();
-		charMaps.printPattern(charMaps.getOPattern(), charMaps.getPPattern(), charMaps.getSPattern());
+	/**
+	Main function to initialize the charMap and call the methods to display the banner
+	**/
+	public static void main(String[]args){
+		HashMap<Character, String[]> charMap = createCharacterMap();
+		String message = "OOPS";
+		displayBanner(message, charMap);
 	}
-	
 }
