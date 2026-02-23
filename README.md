@@ -38,6 +38,8 @@ Print OOPS Banner in Java using String.join(), array and for loop
 Print OOPS Banner in Java using static methods
 #### UC7
 Print OOPS Banner in Java using inner class
+#### UC8
+Print OOPS Banner in Java using HashMap
 
 #### Checkout and Merge
 `git checkout -b <branch-name> `   
